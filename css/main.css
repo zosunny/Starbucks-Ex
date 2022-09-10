@@ -5,6 +5,7 @@ body {
   font-weight: 400;   /* 일반적인 글자 두께 */
   line-height: 1.4;   /* 각각의 줄의 높이 부분 (행간) */
   font-family: 'Nanum Gothic', sans-serif;
+  height: 3000px;
 }
 img{
   display: block; /* 인라인->블록. 하나의 레이아웃으로 활용하겠다! */
@@ -21,8 +22,11 @@ a{
 
 /* HEADER */
 header{
+  /* position: relative; */     /* position fixed가 있으니 없어도 됨 */
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  width: 100%;
+  position: fixed;  /* 가로너비가 최소한으로 줄어들려고 함 */
 }
 header > .inner{    /* header 안의 모든 inner말고 바로 자식요소 inner만 지칭 */
   height: 120px;
@@ -171,4 +175,16 @@ header .main-menu .item .item__contents .contents__texture h4{
 header .main-menu .item .item__contents .contents__texture p{
   color: #669900;
   margin: 4px 0 14px;   /* 상, 중(좌우), 하 */
+}
+header .badges{
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge{
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, .15); /* x축 y축 blur  */
+  cursor: pointer;
 }
