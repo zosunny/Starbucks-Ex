@@ -18,6 +18,60 @@ a{
   margin: 0 auto; /* 가운데 정렬 */
   position: relative;
 }
+/* 우선순위 10점 */
+.btn{
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;   /* a 혹은 span 태그 부분에 사용되더라도 정상적으로 버튼되게 */
+  transition: .4s;
+}
+.btn:hover{
+  background-color: #333;
+  color: #fff;
+}
+/* 우선순위 20점 */
+.btn.btn--reverse{    /* 기존 버튼에 반전된 버튼 BEM 으로!! */
+  background-color: #333;
+  color: #fff;
+}
+/* 우선순위 30점 (기본클 2개+가상클 1개) */
+.btn.btn--reverse:hover{ 
+  background-color: transparent;
+  color: #333;
+}
+.btn.btn--brown{
+  color: #592B18;
+  border-color: #592B18;
+}
+.btn.btn--brown:hover{
+  color: #fff;
+  background-color: #592B18;
+}
+.btn.btn--gold{
+  color: #D9AA8A;
+  border-color: #D9AA8A;
+}
+.btn.btn--gold{
+  color: #fff;
+  background-color: #D9AA8A;
+}
+.btn.btn--white{
+  color: #fff;
+  border-color: #fff;
+}
+.btn.btn--white{
+  color: #333;
+  background-color: #fff;
+}
+
 
 
 /* HEADER */
@@ -27,6 +81,7 @@ header{
   border-bottom: 1px solid #c8c8c8;
   width: 100%;
   top: 0;
+  z-index: 9;
   position: fixed;  /* 가로너비가 최소한으로 줄어들려고 함 */
 }
 header > .inner{    /* header 안의 모든 inner말고 바로 자식요소 inner만 지칭 */
@@ -198,26 +253,39 @@ header .badges .badge{
 }
 .visual .inner{
   height: 646px;
-  background-color: orange;
 }
 .visual .title{
-
+  position: absolute;
+  top: 88px;
+  left: -10px;
 }
 .visual .title .btn{
-  
+  position: absolute;   /* 구조상의 부모요소인 title 위치를 기준으로 */
+  top: 259px;
+  left: 173px;
 }
 .visual .cup1.image{  /* 클래스선택자 2개가 붙어있음 -> 일치선택자 */
-  
+  position: absolute;
+  bottom: 0;
+  right: -47px;
 }
 .visual .cup1.text{
-  
+  position: absolute;
+  top: 38px;
+  right: 171px;
 }
 .visual .cup2.image{  /* 클래스선택자 2개가 붙어있음 -> 일치선택자 */
-  
+  position: absolute;
+  bottom: 0;
+  right: 162px;
 }
 .visual .cup2.text{
-  
+  position: absolute;
+  top: 321px;
+  right: 416px;
 }
 .visual .spoon{
-
+  position: absolute;
+  bottom: 0;
+  left: 275px;
 }
