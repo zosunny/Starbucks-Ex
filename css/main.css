@@ -26,6 +26,7 @@ header{
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
   width: 100%;
+  top: 0;
   position: fixed;  /* 가로너비가 최소한으로 줄어들려고 함 */
 }
 header > .inner{    /* header 안의 모든 inner말고 바로 자식요소 inner만 지칭 */
@@ -187,4 +188,36 @@ header .badges .badge{
   margin-bottom: 12px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, .15); /* x축 y축 blur  */
   cursor: pointer;
+}
+
+/* VISUAL */
+.visual{
+  margin-top: 120px;    /* header 높이만큼 띄움 */
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+}
+.visual .inner{
+  height: 646px;
+  background-color: orange;
+}
+.visual .title{
+
+}
+.visual .title .btn{
+  
+}
+.visual .cup1.image{  /* 클래스선택자 2개가 붙어있음 -> 일치선택자 */
+  
+}
+.visual .cup1.text{
+  
+}
+.visual .cup2.image{  /* 클래스선택자 2개가 붙어있음 -> 일치선택자 */
+  
+}
+.visual .cup2.text{
+  
+}
+.visual .spoon{
+
 }
