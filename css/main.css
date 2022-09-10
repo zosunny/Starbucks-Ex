@@ -9,6 +9,9 @@ body {
 img{
   display: block; /* 인라인->블록. 하나의 레이아웃으로 활용하겠다! */
 }
+a{
+  text-decoration: none;    /* 밑줄 등 사용 안하겠다 */
+}
 
 
 /* HEADER */
@@ -29,4 +32,67 @@ header .logo{
   bottom: 0;
   left: 0;
   margin: auto; /* 가운데로 몰아주려면 height도 알아야 함 */
+  display: none;
+}
+header .sub-menu{
+  display: flex;
+}
+header .sub-menu ul.menu{   /* 명시적으로 적어주는게 좋음 */
+  font-family: Arial, sans-serif;   /* Arial있으면 적용하고 없으면 고딕체계열인 sans-serif 적용 */
+  display: flex;  /* 수평정렬로 */
+}
+header .sub-menu ul.menu li{
+  position: relative;
+}
+header .sub-menu ul.menu li::before{  /* before라는 가상요소 생성(인라인) */
+  content: "";    /* 필수 */
+  display: block;
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  position: absolute; /* 부모요소 기준으로, block으로 자동변환 됨 */ 
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+header .sub-menu ul.menu li:first-child::before{  /* Sign In 앞 칸막이는 삭제 */
+  display: none;
+}
+header .sub-menu ul.menu li a{
+  font-size: 12px;
+  padding: 11px 16px;
+  display: block;     /* a태그 원래 인라인 요소 */
+  color: #656565;
+}
+header .sub-menu ul.menu li a:hover{
+  color: #000;
+}
+header .sub-menu .search{
+  height: 34px;
+  position: relative;
+}
+header .sub-menu .search input{
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;   /* width, height 무조건 유지 */
+  border-radius: 5px;
+  outline: none;      /* 입력시 테투리 선 생성 제거 */
+  background-color: #fff;
+  color: #777;
+  font-size: 12px;
+  transition: width .4s;  /* width에만 전환효과 추가 default는 all */
+}
+header .sub-menu .search input:focus{   /* focus라는 가상클래스 선택자 추가 */
+  width: 190px;
+  border-color: #669900;
+}
+header .sub-menu .search .material-icons{
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;   /* 요소의 너비나 높이값 필수로 있어야 됨 */
 }
