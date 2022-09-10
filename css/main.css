@@ -16,13 +16,13 @@ a{
 
 /* HEADER */
 header{
-  background-color: royalblue;
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
 }
 header .inner{
   width: 1100px;
   height: 120px;
   margin: 0 auto;   /* 가운데 정렬 */
-  background-color: orange;
   position: relative;
 }
 header .logo{
@@ -32,9 +32,11 @@ header .logo{
   bottom: 0;
   left: 0;
   margin: auto; /* 가운데로 몰아주려면 height도 알아야 함 */
-  display: none;
 }
 header .sub-menu{
+  position: absolute;
+  top: 10px;
+  right: 0;
   display: flex;
 }
 header .sub-menu ul.menu{   /* 명시적으로 적어주는게 좋음 */
@@ -95,4 +97,8 @@ header .sub-menu .search .material-icons{
   bottom: 0;
   right: 5px;
   margin: auto;   /* 요소의 너비나 높이값 필수로 있어야 됨 */
+  transition: .3s;
+}
+header .sub-menu .search.focused .material-icons{
+  opacity: 0; /* focus되면 검색 아이콘 사라지게 */
 }
