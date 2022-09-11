@@ -471,3 +471,47 @@ header .badges .badge{
   background-color: #333;
   color: #fff;
 }
+
+/* REWARDS */
+.rewards{
+  position: relative;
+}
+.rewards .bg-left{
+  width: 50%;
+  height: 100%;
+  background-color: #272727;  /* 별이랑 같은 색으로 쭉 깔리게 */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.rewards .bg-right{
+  width: 50%;
+  height: 100%;
+  background-color: #d5c798;  /* 별이랑 같은 색으로 쭉 깔리게 */
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.rewards .inner{
+  background-image: url("../images/rewards.jpg");
+  height: 241px;
+  /* position COMMON에 있음 */
+}
+.rewards .btn-group{
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+  width: 250px;     /* 현재 btn COMMON 가로너비 130이므로 2개면 260 */
+  display: flex;
+  flex-wrap: wrap;  /* 가로너비 250보다 넘치면 줄바꿈 허용! */
+}
+.rewards .btn-group .btn.sign-up{
+  margin-right: 10px;
+}
+.rewards .btn-group .btn.sign-in{
+  width: 110px;
+}
+.rewards .btn-group .btn.gift{
+  margin-top: 10px;
+  flex-grow: 1;     /* 최대한으로 늘어나라 */
+}
