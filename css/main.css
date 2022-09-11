@@ -416,3 +416,53 @@ header .badges .badge{
   right: 0;
   margin: auto;   /* COMMON btn에 width 정의해두었으므로 따로 지정 안해도 됨 */
 }
+.notice .promotion .swiper-pagination{
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  /* posion 설정 안해도 됨 (swiper-pagination에 JS라이브러리가 제공하는 기본 스타일이 들어가 있음) */
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet{  /* 개별 동글뱅이 (생성된 클래스명은 개발자도구로 확인) */
+  background-image: url("../images/promotion_slide_pager.png");
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  outline: none;    /* 클릭시 생기는 파란 선 제거 */
+  background-color: transparent;  /* 기본 색인 파란색 안하고 투명으로 */
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child{
+  /* 마지막 동글뱅이는 magin 제거해야 됨 */
+  margin-right: 0;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active{ /* 현재 동글뱅이 (생성된 클래스명은 개발자도구로 확인) */
+  background-image: url("../images/promotion_slide_pager_on.png");
+}
+.notice .promotion .swiper-prev,    /* 쉼표로 (다중선택자) 꼭 줄바꿈 하자 */
+.notice .promotion .swiper-next{
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 300px;
+  z-index: 1;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+.notice .promotion .swiper-prev{
+  left: 50%;
+  margin-left: -480px;
+}
+.notice .promotion .swiper-next{
+  right: 50%;
+  margin-right: -480px;
+}
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover{
+  background-color: #333;
+  color: #fff;
+}

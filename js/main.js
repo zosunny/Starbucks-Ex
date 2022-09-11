@@ -74,7 +74,7 @@ new Swiper(".promotion .swiper-container", {
     clickable: true   //사용자의 페이지 번호 요소 제어 가능 여부
   },
   navigation: {
-    preEl: '.promotion .swiper-prev',
+    prevEl: '.promotion .swiper-prev',
     nextEl: '.promotion .swiper-next'
   }
 });
