@@ -391,6 +391,11 @@ header .badges .badge{
   height: 693px;
   background-color: #f6f5ef;
   position: relative;
+  transition: height .4s;
+  overflow: hidden;   /* 영역 밖으로 넘치지 않게 잘라냄 */
+}
+.notice .promotion.hide{    /* 자식선택자 아니고 일치선택자!! 붙여야 됨 */
+  height: 0;
 }
 .notice .promotion .swiper-container{
   width: calc(819px * 3 + 20px);    /* 사진3개 + 사이여백 */
