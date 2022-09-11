@@ -232,6 +232,10 @@ header .main-menu .item .item__contents .contents__texture p{
   color: #669900;
   margin: 4px 0 14px;   /* 상, 중(좌우), 하 */
 }
+
+
+
+/* BADGES */
 header .badges{
   position: absolute;
   top: 132px;
@@ -244,6 +248,8 @@ header .badges .badge{
   box-shadow: 4px 4px 10px rgba(0, 0, 0, .15); /* x축 y축 blur  */
   cursor: pointer;
 }
+
+
 
 /* VISUAL */
 .visual{
@@ -288,4 +294,89 @@ header .badges .badge{
   position: absolute;
   bottom: 0;
   left: 275px;
+}
+.visual .fade-in{
+  opacity: 0;
+}
+
+
+/* NOTICE */
+.notice{
+
+}
+.notice .notice-line{
+  /* 높이속성 별도지정 없으면 auto (최대한 줄어들려고하는데 이때 inner의 height속성에 걸림
+     즉 자식요소의 height값이 부모요소의 height auto 값 */
+  position: relative;
+}
+.notice .notice-line .bg-left{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+}
+.notice .notice-line .bg-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #f6f5ef;
+}
+.notice .notice-line .inner{
+  height: 62px;
+  display: flex;    /* inner안에 left, right이 수평이 되어야 하므로 */
+}
+.notice .notice-line .inner__left{
+  width: 60%;
+  height: 100%;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+}
+.notice .notice-line .inner__left h2{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+.notice .notice-line .inner__left .swiper-container{
+  height: 62px;   /* .inner__left의 align-items:center에 의해 높이 사라지지 않도록 지정 */
+  background-color: orange;
+  flex-grow: 1;   /* 최대한 늘어나라 */
+}
+.notice .notice-line .inner__left .notice-line__more{
+  width: 62px;
+  height: 62px;
+  display: flex;
+  justify-content: center;  /* 수평가운데 정렬 */
+  align-items: center;      /* 수직가운데 정렬 */
+}
+.notice .notice-line .inner__left .notice-line__more .material-icons{
+  color: #fff;
+  font-size: 30px;  /* default는 24px */
+}
+.notice .notice-line .inner__right{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;  /* 오른쪽 수평정렬 */
+  align-items: center;
+}
+.notice .notice-line .inner__right h2{
+  font-size: 17px;
+  font-weight: 700;
+}
+.notice .notice-line .inner__right .toggle-promotion{
+  width: 62px;
+  height: 62px;
+  cursor: pointer;  /* a태그로 안되어있으므로 사용자에게 버튼 인식시켜야 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notice .notice-line .inner__right .toggle-promotion .material-icons{
+  font-size: 30px;
 }
