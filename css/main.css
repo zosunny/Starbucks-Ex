@@ -395,12 +395,24 @@ header .badges .badge{
 .notice .promotion .swiper-container{
   width: calc(819px * 3 + 20px);    /* 사진3개 + 사이여백 */
   height: 553px;
-  background-color: orange;
-  text-align: center;
-  font-size: 200px;
   position: absolute;
   top: 40px;
   /* 화면의 정중앙에 배치시키는 법 */
   left: 50%;                                      /* 왼쪽에서 50%에 배치하고 */
   margin-left: calc((819px * 3 + 20px) / -2);     /* 다시 요소의 절반만큼 왼쪽으로 땡겨옴 -> 중점을 정가운데로 옮김 */
+}
+.notice .promotion .swiper-slide{
+  opacity: .4;
+  transition: opacity 1s;
+  position: relative;
+}
+.notice .promotion .swiper-slide-active{    /* 정가운데 슬라이드 */
+  opacity: 1;
+}
+.notice .promotion .swiper-slide .btn{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;   /* COMMON btn에 width 정의해두었으므로 따로 지정 안해도 됨 */
 }

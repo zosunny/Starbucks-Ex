@@ -60,3 +60,13 @@ new Swiper(".notice-line .swiper-container", {   //생성자(js의 클래스)-js
   autoplay: true,   //자동재생
   loop: true        //반복재생
 });
+new Swiper(".promotion .swiper-container", {
+  direction: 'horizontal', //default값
+  slidesPerView: 3,        //한번에 보여줄 슬라이드 개수 (default는 1개)
+  spaceBetween:10,         //슬라이드 사이 여백
+  centeredSlides: true,    //왼쪽말고 가운데서 보이기
+  loop: true,
+  autoplay: {
+    delay: 5000
+  }
+});
