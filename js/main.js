@@ -68,5 +68,13 @@ new Swiper(".promotion .swiper-container", {
   loop: true,
   autoplay: {
     delay: 5000
+  },
+  pagination: {
+    el: '.promotion .swiper-pagination',  //페이지 번호 요소 선택자(입력된 선택자에 맞는 요소 찾아 페이지번호 사용할 수 있도록 동작)
+    clickable: true   //사용자의 페이지 번호 요소 제어 가능 여부
+  },
+  navigation: {
+    preEl: '.promotion .swiper-prev',
+    nextEl: '.promotion .swiper-next'
   }
 });
