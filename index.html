@@ -40,6 +40,10 @@
   <!--애니메이션 라이브러리(gsap cdn) 오픈소스-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <!--SWIPER (스와이퍼 라이브러리 Use Swiper from CDN 참고 )-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+
   <script defer src="./js/main.js"></script>  <!--html요소 다루기위해 defer속성으로 html구조 해석-->
 
 </head>
@@ -419,7 +423,22 @@
 
         <div class="inner__left">
           <h2>공지사항</h2>
-          <div class="swiper-container"></div>    <!--공지사항 슬라이더 만들 것-->
+          <div class="swiper-container">    <!--Get Started의 'Add Swiper HTML Layout' 참고-->
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="javascript:void(0)">크리스마스 & 연말연시 스타벅스 매장 영업시간 변경 안내</a>
+              </div>
+              <div class="swiper-slide">
+                <a href="javascript:void(0)">[당첨자 발표] 2021 스타벅스 플래너 영수증 이벤트</a>
+              </div>
+              <div class="swiper-slide">
+                <a href="javascript:void(0)">스타벅스커피 코리아 애플리케이션 버전 업데이트 안내</a>
+              </div>
+              <div class="swiper-slide">
+                <a href="javascript:void(0)">[당점차 발표] 뉴이어 전자영수증 이벤트</a>
+              </div>
+            </div>
+          </div>
           <a href="javascript:void(0)" class="notice-line__more">   <!--a태그는 기본적으로 파란색/보라색-->
             <div class="material-icons">add_circle</div>
           </a>

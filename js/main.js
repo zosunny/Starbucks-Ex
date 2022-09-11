@@ -50,3 +50,13 @@ fadeEls.forEach(function(fadeEl, index){     //forEach를 사용해 여러개의
     opacity: 1
   });
 });
+
+
+
+//SWIPER
+//new Swiper(선택자, 옵션)
+new Swiper(".notice-line .swiper-container", {   //생성자(js의 클래스)-js문법으로 swiper라는 함수를 실행
+  direction: 'vertical',
+  autoplay: true,   //자동재생
+  loop: true        //반복재생
+});
