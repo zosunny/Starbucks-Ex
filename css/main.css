@@ -515,3 +515,40 @@ header .badges .badge{
   margin-top: 10px;
   flex-grow: 1;     /* 최대한으로 늘어나라 */
 }
+
+
+
+/* YOUTUBE VIDEO */
+/* youtube section의 일부 높이에서 영상의 정가운데 부분만 화면에 출력하고자 함 */
+.youtube{
+  position: relative;
+  height: 700px;
+  background-color: #333;
+  overflow: hidden;
+}
+.youtube .youtube__area{
+  width: 1920px;
+  background-color: orange;
+  position: absolute;
+  /* 뷰의 중앙으로 */
+  left: 50%;
+  margin-left: calc(1920px / -2);
+  top: 50%;
+  margin-top: calc(1920px * 9 / 16 / -2);   /* 세로너비의 절반 */
+}
+.youtube .youtube__area::before{    /* 자식요소가 필요한데 단순 style위한 요소라면 html 건들X 가상요소를 사용 */
+  content: "";
+  display: block;   /* 가상요소는 인라인 요소 */
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;  /* 16:9비율로 만들음 */
+}
+.youtube .youtube__cover{
+  background-image: url("../images/video_cover_pattern.png");   /* 투명 패턴 커버 이미지 */
+  background-color: rgba(0, 0, 0, .3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
