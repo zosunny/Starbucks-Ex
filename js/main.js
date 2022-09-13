@@ -107,10 +107,10 @@ function floatingObject(selector, delay, size){
   //gsap.to(요소, 시간, 옵션);
   gsap.to(selector, random(1.5, 2.5), {
     y: size,
-    repeat: -1,     //-1: 무한반복
-    yoyo: true,     //역재생
-    ease: Power1.easeInOut,    //greenSock에서 easing함수를 이용해 동작 제어 가능
-    delay: random(0, delay)        //지연시간
+    repeat: -1,               //-1: 무한반복
+    yoyo: true,               //역재생
+    ease: Power1.easeInOut,   //greenSock에서 easing함수를 이용해 동작 제어 가능
+    delay: random(0, delay)   //지연시간
   });
 };
 floatingObject('.floating1', 1, 15)
