@@ -639,7 +639,7 @@ header .badges .badge{
   background-image: url("../images/favorite_bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;   /* 요소같이 스크롤되지 않게(뷰포트에 고정. 나머지만 스크롤시 움직임)*/
+  background-attachment: fixed;   /* 요소같이 스크롤되지 않게(뷰포트에 고정. 나머지만 스크롤시 움직임) = parallax scolling*/
   background-size: cover;         /* 배경의 이미지를 요소의(화면의) 넓은 너비에 맞춰 출력 */
 
 }
@@ -658,4 +658,54 @@ header .badges .badge{
 }
 .pick-your-favorite .text-group .description{
   margin-bottom: 40px;
+}
+
+
+
+/* RESERVE STORE */
+.reserve-store{
+  background-image: url("../images/reserve_store_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.reserve-store .inner{
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reserve-store .medal{
+    width: 334px;
+    height: 334px;      /* 최대한 늘어나려하는 것 막기위해 front, back과 같은 크기 줌 */
+    perspective: 600px; /* 원근거리 */
+}
+.reserve-store .medal .front,   /* 다중선택자 */
+.reserve-store .medal .back{
+  width: 334px;
+  height: 334px;
+  backface-visibility: hidden;  /* 뒷면은 숨기겠다. */
+  transition: 1s;
+  position: absolute;
+}
+.reserve-store .medal .front{
+  /* position: absolute; */
+  transform: rotateY(0deg);     /* 0degree 즉, 변화가 없다. */
+}
+.reserve-store .medal:hover .front{   /* 메달에 마우스 올리면 front를 어떻게 처리할 것인가 */
+  transform: rotateY(180deg);   /* 0도 -> 180도 */
+}
+.reserve-store .medal .back{
+  transform: rotateY(-180deg);  /* -180degree만큼 Y축 회전(뒷면) */
+}
+.reserve-store .medal:hover .back{    /* 메달에 마우스 올리면 back을 어떻게 처리할 것인가 */
+  transform: rotateY(0deg);     /* -180도 -> 0도 */
+}
+.reserve-store .medal .back .btn{
+  position: absolute;
+  top: 240px;
+  left: 0;
+  right: 0;
+  margin: auto;   /* COMMON .btn에 width 지정해놨기때문에 안해도 됨 */
 }
