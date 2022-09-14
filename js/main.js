@@ -61,7 +61,7 @@ new Swiper(".notice-line .swiper-container", {   //생성자(js의 클래스)-js
   loop: true        //반복재생
 });
 new Swiper(".promotion .swiper-container", {
-  direction: 'horizontal', //default값
+  //direction: 'horizontal', //default값
   slidesPerView: 3,        //한번에 보여줄 슬라이드 개수 (default는 1개)
   spaceBetween:10,         //슬라이드 사이 여백
   centeredSlides: true,    //왼쪽말고 가운데서 보이기
@@ -74,8 +74,19 @@ new Swiper(".promotion .swiper-container", {
     clickable: true   //사용자의 페이지 번호 요소 제어 가능 여부
   },
   navigation: {
-    prevEl: '.promotion .swiper-prev',
-    nextEl: '.promotion .swiper-next'
+    prevEl: '.promotion .swiper-prev',      //이전버튼 제어
+    nextEl: '.promotion .swiper-next'       //이후버튼 제어
+  }
+});
+
+new Swiper(".awards .swiper-container", {
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,   //사이여백
+  slidesPerView: 5,    //한 화면에 몇개 슬라이드 보일 것?
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
   }
 });
 
@@ -131,3 +142,6 @@ spyEls.forEach(function(spyEl){
     .addTo(new ScrollMagic.Controller());   // addTo: ScrollMagic JS라이브러리가 필요한 Controller 내용 추가위한 메소드
 
 })
+
+
+
