@@ -825,3 +825,45 @@ header .badges .badge{
   background-color: #fff;
   color: #333;
 }
+
+
+
+/* FOOTER */
+footer{
+  background-color: #272727;
+  border-top: 1px solid #333;
+}
+footer .inner{
+  padding: 40px 0 60px 0;
+}
+footer .menu{
+  display: flex;
+  justify-content: center;
+}
+footer .menu li{
+  position: relative;
+}
+footer .menu li::before{    /* 인라인요소 */
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #555;
+  position: absolute;       /* absolute와 fixed는 block요소로 자동변환 */
+  top: 0;
+  bottom: 0;
+  right: -1px;
+  margin: auto;
+}
+footer .menu li:last-child::before{
+  display: none;
+}
+footer .menu li a{
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 15px;      /* 인라인요소 a에서 정상적인 사용불가 */
+  display: block;     /* 블럭요소로 바꿔줌 */
+}
+footer .menu li a.green{
+  color: #669900;
+}
