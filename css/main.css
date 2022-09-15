@@ -901,3 +901,22 @@ footer .logo{
   margin: 30px auto 0;    /* 상 중 하 */
   /* img요소는 display: block 지정시 whidth 없어도 margin: auto 가능 (COMMON에서 했음) */
 }
+
+
+
+#to-top{
+  width: 42px;
+  height: 42px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;      /* 뷰포트 기준 배치 */
+  bottom: 30px;
+  right: 30px;
+  z-index: 9;
+}

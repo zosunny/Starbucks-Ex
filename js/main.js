@@ -20,25 +20,44 @@ searchInputEl.addEventListener('blur', function(){    //input요소에 focus가 
 
 //BADGES
 const badgeEl = document.querySelector("header .badges");    //document는 html 자체
+const toTopEl = document.querySelector("#to-top");           //직접 gsap.to("#to-top") 쓰는 것도 가능하나 동작을 가볍게(찾는 시간줄이기위해) 변수를 쓰자
 
 window.addEventListener('scroll', _.throttle(function(){   //window : 우리가 보고있는 화면 창 , lodash cdn 연결 통해 _.throttle 사용가능
   console.log(window.scrollY)
   if(window.scrollY > 500){
-    // badgeEl.style.display = 'none';   //배지 숨김
+    //배지 숨김
+    // badgeEl.style.display = 'none';
     // gsap.to(동작시킬요소, 지속시간, 옵션);
     gsap.to(badgeEl, .6, {  //option은 기본적으로 객체데이터: {}로
       opacity: 0,     //시각적으로만 사라짐. 요소는 그대로 있어서 혼란
       display: 'none' //css값을 js에서 사용할 땐 ''써서 문자데이터로 사용(숫자는 ㄱㅊ)
     });
+    //버튼 보이기!
+    gsap.to(toTopEl, .2, {
+      x: 0    //요소가 보일땐 원위치
+    });
   } else {
-    // badgeEl.style.display = 'block';  //배지 보임
+    //배지 보임
+    // badgeEl.style.display = 'block';
     gsap.to(badgeEl, .6, {  //option은 기본적으로 객체데이터: {}로
       opacity: 1,
       display: 'block'
     });
+    //버튼 숨기기!
+    gsap.to("#to-top", .2, {
+      x: 100  //요소를 숨길땐 100px x축으로 이동
+    });
   }
 }, 300));   //300ms = 0.3초   로 부하를 줘서 함수가 마구잡이로 실행되는 것 방지 (사이트를 가볍게 함)
 // _.throttle(함수, 시간)
+
+
+// const toTopEl = document.querySelector("#to-top");
+toTopEl.addEventListener('click', function(){
+  gsap.to(window, .7, {     //gsap이라는 애니메이션을 처리하는 JS라이브러리가 window객체 통해 화면 전체 애니메이션 처리
+    scrollTo: 0 //Scroll의 위치를 0px지점으로 옮겨주겠다.(0.7초간!)   //추가 cdn 플러그인 가져와 연결했었음 html에
+  });
+});
 
 
 
