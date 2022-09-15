@@ -145,3 +145,5 @@ spyEls.forEach(function(spyEl){
 
 
 
+const thisYear = document.querySelector(".this-year");
+thisYear.textContent = new Date().getFullYear(); /* new 키워드 통해 Date라는 JS 생성자함수 실행, getFullYear메소드 실행으로 현재 년도 정보 숫자 데이터로 반환 */
